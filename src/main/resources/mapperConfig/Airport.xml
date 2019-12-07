@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.uek.airline.mapper.AirportMapper">
-    <select id="listAirport" resultType="com.uek.airline.entity.Airport">
+    <select id="listAirport" resultType="Airport">
         select * from airport
     </select>
+    <insert id="saveAirport" parameterType="Airport">
+        insert into airport(airport_code,city,airport_name) values(#{airportCode},#{city},#{airportName})
+    </insert>
+    <select id="getAirport" parameterType="String" resultType="Airport">
+        select * from airport where airport_code=#{airportCode}
+    </select>
+    <delete id="deleteAirport" parameterType="String">
+        delete from airport where airport_code=#{airportCode}
+    </delete>
+    <update id="updateAirport" parameterType="Airport">
+        update airport set airport_code=#{airportCode},city=#{city},airport_name=#{airportName} where airport_code=#{airportCode}
+    </update>
 </mapper>

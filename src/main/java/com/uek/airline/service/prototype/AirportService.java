@@ -1,12 +1,12 @@
-package com.uek.airline.mapper;
+package com.uek.airline.service.prototype;
 
 import com.uek.airline.entity.Airport;
 
 import java.util.List;
 
-public interface AirportMapper {
+public interface AirportService {
     void deleteAirport(String airportCode);
-    List<Airport> listAirport();
+    List<Airport> listAirport(int pageNum , int pageSize);
     void saveAirport(Airport airport);
     void updateAirport(Airport airport);
     Airport getAirport(String airportCode);

@@ -20,5 +20,21 @@ class AirlineApplicationTests {
             System.out.println(airport);
         }
     }
-
+    @Test
+    void saveAirport(){
+        airportMapper.saveAirport(Airport.builder().airportCode("YZY").airportName("原泽杨").city("晋城").build());
+    }
+    @Test
+    void getAirport(){
+        Airport yzy = airportMapper.getAirport("YZY");
+        System.out.println(yzy);
+    }
+    @Test
+    void updateAirport(){
+        airportMapper.updateAirport(Airport.builder().airportName("晋城机场").airportCode("YZY").city("晋城").build());
+    }
+    @Test
+    void deleteAirport(){
+        airportMapper.deleteAirport("YZY");
+    }
 }

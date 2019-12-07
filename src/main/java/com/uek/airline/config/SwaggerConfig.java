@@ -20,7 +20,7 @@ public class SwaggerConfig {
 //     Docket
     @Bean
     public Docket createRestApi(){
-        return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select().apis(RequestHandlerSelectors.basePackage("com.uek.controller")).paths(PathSelectors.any()).build();
+        return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select().apis(RequestHandlerSelectors.basePackage("com.uek.airline.controller")).paths(PathSelectors.any()).build();
     }
 //  创建该API的基本信息(这些基本信息会展现在文档页面中)
     private ApiInfo apiInfo() {
