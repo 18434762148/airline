@@ -6,9 +6,9 @@ import lombok.Data;
 @Data
 public class JsonResult {
     private int code;
-    private String status;
+    private String msg;
     private String data;
-    public String setData(Object o){
-        return JSON.toJSONString(o);
+    public void setData(Object o) {
+        this.data = JSON.toJSONString(o);
     }
 }
